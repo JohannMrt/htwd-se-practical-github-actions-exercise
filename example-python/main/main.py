@@ -1,6 +1,6 @@
 from town import Town
 
-#mainfunktion
+#mainfunktion kommentar
 def main():
     t = Town("Dresden", 556780)
     print(str(t))
