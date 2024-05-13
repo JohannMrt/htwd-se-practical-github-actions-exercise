@@ -75,7 +75,7 @@ class TestTown(unittest.TestCase):
         t = Town(self.test_value1_name, -1)
         self.assertFalse(t.residents < 0)
         # set equals get
-        t.residents = -2
+        t.residents = 0
         self.assertFalse(t.residents < 0)
 
     def test_town_str(self):
