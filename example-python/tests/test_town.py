@@ -16,6 +16,16 @@ class TestTown(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         pass
+    
+    @residents.setter
+    def residents(self, value):
+        # variant: min default value 0
+        self.__residents = 0 if value < 0 else value
+
+        # variant: exception
+        #if value < 0:
+        #    raise ValueError("residents must be equal or greater than 0")
+        #self.__residents = value
 
     # before each test
     def setUp(self):
@@ -65,7 +75,7 @@ class TestTown(unittest.TestCase):
         t = Town(self.test_value1_name, -1)
         self.assertFalse(t.residents < 0)
         # set equals get
-        t.residents = 0
+        t.residents = -2
         self.assertFalse(t.residents < 0)
 
     def test_town_str(self):
